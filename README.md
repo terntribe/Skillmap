@@ -25,7 +25,7 @@
 1. Clone the repo:
 
    ```bash
-   git clone https://github.com/Incognitol07/Skillmap.git
+   git clone https://github.com/terntribe/Skillmap.git
    cd Skillmap
    ```
 
@@ -57,8 +57,8 @@ npm run dev
 
 ## Contributing
 
-We welcome contributions! Please read our [Contribution Guidelines](https://github.com/Incognitol07/Skillmap/blob/main/CONTRIBUTING.md) and our [Code of Conduct](https://github.com/Incognitol07/Skillmap/blob/main/CODE_OF_CONDUCT.md).
+We welcome contributions! Please read our [Contribution Guidelines](https://github.com/terntribe/Skillmap/blob/main/CONTRIBUTING.md) and our [Code of Conduct](https://github.com/terntribe/Skillmap/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
-Distributed under the MIT License. See [LICENSE](https://github.com/Incognitol07/Skillmap/blob/main/LICENSE) for details.
+Distributed under the MIT License. See [LICENSE](https://github.com/terntribe/Skillmap/blob/main/LICENSE) for details.

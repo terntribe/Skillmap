@@ -9,7 +9,7 @@ We're thrilled you want to help! Here's how to get started:
 2. Clone your fork:
 
    ```bash
-   git clone https://github.com/Incognitol07/Skillmap.git
+   git clone https://github.com/terntribe/Skillmap.git
    ```
 
 3. Create a feature branch:
