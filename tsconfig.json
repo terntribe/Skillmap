@@ -1,0 +1,34 @@
+{
+    "compilerOptions": {
+      /* Basic Configuration */
+        "target": "ES2020",              // Modern ECMAScript features
+        "module": "CommonJS",            // Node.js-friendly module system
+        "outDir": "./dist",              // Where compiled JS goes
+        "rootDir": "./src",              // Source directory
+        "baseUrl": "./src",              // Base directory for imports
+
+      /* Strict Type-Checking */
+        "strict": true,                  // Enable all strict checks
+        "noImplicitAny": true,           // Prevent 'any' without explicit types
+        "strictNullChecks": true,        // Catch null/undefined errors
+        "strictFunctionTypes": true,
+
+      /* Module Resolution */
+        "moduleResolution": "node",      // Follow Node.js module resolution
+        "esModuleInterop": true,         // Better compatibility with CommonJS
+        "skipLibCheck": true,            // Skip library declaration checks
+      /* Path Aliases (Optional but Recommended) */
+        "paths": {
+        "@/*": ["*"],                  // Import like: import User from '@/models/user.model'
+        "@config/*": ["config/*"]      // Cleaner imports for config files
+        },
+      /* Source Maps (Debugging) */
+        "sourceMap": true,                // Generate .map files for debugging
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true
+    },
+
+    /* Include/Exclude Files */
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "test/**/*", "**/*.spec.ts"]
+}
