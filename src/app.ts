@@ -9,8 +9,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(requestLogger);
-app.use("/api", routes);
 app.use(errorHandler);
+app.use("/api", routes);
 
 app.get('/', (req: Request, res: Response) => {
   // Send a response to the client
