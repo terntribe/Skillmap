@@ -1,4 +1,4 @@
-import { ContributionService } from "@/services/contribution.service";
+import { ContributionService } from "../services/contribution.service";
 
 export class ContributionController {
     

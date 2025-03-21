@@ -4,6 +4,7 @@ import { Roadmap } from './roadmap.model';
 import { Contribution } from './contribution.model';
 import { Resource } from './resource.model';
 import { UserProgress } from './userProgress.model';
+import bcrypt from 'bcrypt';
 
 @Entity()
 export class User {
@@ -47,4 +48,8 @@ export class User {
 
     @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
     createdAt!: Date;
+
+    comparePassword: (candidatePassword: string) => Promise<boolean> = async (candidatePassword: string): Promise<boolean> => {
+        return bcrypt.compare(candidatePassword, this.password);
+    };
 }

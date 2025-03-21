@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { RoadmapController } from "@/controllers/roadmap.controller";
+import { RoadmapController } from "../controllers/roadmap.controller";
 
 const roadmapRouter = Router();
 

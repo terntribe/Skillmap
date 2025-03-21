@@ -3,7 +3,9 @@ import { User } from '../models/user.model';
 import * as bcrypt from 'bcrypt';
 
 export class UserService {
-    private userRepo = AppDataSource.getRepository(User);
+    private get userRepo() {
+        return AppDataSource.getRepository(User);
+    }
 
     async createUser(userData: Partial<User>): Promise<User> {
         if (!userData.password) {
@@ -31,6 +33,13 @@ export class UserService {
     async findByEmail(email: string): Promise<User | null> {
         return this.userRepo.findOne({ 
         where: { email },
+        select: ['id', 'email', 'password', 'role']
+        });
+    }
+
+    async findByUsername(username: string): Promise<User | null> {
+        return this.userRepo.findOne({ 
+        where: { username },
         select: ['id', 'email', 'password', 'role']
         });
     }
