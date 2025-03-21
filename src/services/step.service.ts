@@ -34,4 +34,8 @@ export class StepService {
     async deleteStep(stepId: string): Promise<void> {
         await this.stepRepo.delete(stepId);
     }
+
+    async findStepById(stepId: string): Promise<Step | null> {
+        return this.stepRepo.findOneBy({ id: stepId });
+    }
 }
