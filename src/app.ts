@@ -3,10 +3,12 @@ import { AppDataSource } from './config/db';
 import { PORT } from './config/env';
 import routes from './routes';
 import { errorHandler } from './middlewares/error.middleware';
+import { requestLogger } from './middlewares/logger.middleware';
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+app.use(requestLogger);
 app.use("/api", routes);
 app.use(errorHandler);
 
