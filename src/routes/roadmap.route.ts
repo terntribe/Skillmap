@@ -69,6 +69,33 @@ roadmapRouter.get('/:id', controller.getRoadmap);
 
 /**
  * @swagger
+ * /roadmaps/{id}/steps:
+ *   get:
+ *     summary: Get all steps for a roadmap
+ *     tags: [Roadmaps]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *           format: uuid
+ *     responses:
+ *       200:
+ *         description: List of steps
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/StepResponse'
+ *       404:
+ *         $ref: '#/components/examples/NotFound'
+ */
+roadmapRouter.get('/:id/steps', controller.getSteps);
+
+/**
+ * @swagger
  * /roadmaps/tags/popular:
  *   get:
  *     summary: Get popular tags
@@ -115,7 +142,7 @@ roadmapRouter.use(authMiddleware);
  *         $ref: '#/components/examples/ValidationError'
  *       401:
  *         $ref: '#/components/examples/Unauthorized'
- */
+*/
 roadmapRouter.post('/', roadmapValidator, controller.createRoadmap);
 
 /**
@@ -250,32 +277,6 @@ roadmapRouter.patch('/:id/publish', controller.publishRoadmap);
  */
 roadmapRouter.post('/:id/steps', controller.createStep);
 
-/**
- * @swagger
- * /roadmaps/{id}/steps:
- *   get:
- *     summary: Get all steps for a roadmap
- *     tags: [Roadmaps]
- *     parameters:
- *       - in: path
- *         name: id
- *         required: true
- *         schema:
- *           type: string
- *           format: uuid
- *     responses:
- *       200:
- *         description: List of steps
- *         content:
- *           application/json:
- *             schema:
- *               type: array
- *               items:
- *                 $ref: '#/components/schemas/StepResponse'
- *       404:
- *         $ref: '#/components/examples/NotFound'
- */
-roadmapRouter.get('/:id/steps', controller.getSteps);
 
 // Progress tracking
 
