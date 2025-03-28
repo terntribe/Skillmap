@@ -28,7 +28,7 @@ export class Roadmap {
     @OneToMany(() => Step, step => step.roadmap, { cascade: true })
     steps!: Step[];
 
-    @ManyToMany(() => Tag, { cascade: true })
+    @ManyToMany(() => Tag, tag => tag.roadmaps, { cascade: true })
     @JoinTable()
     tags!: Tag[];
 
