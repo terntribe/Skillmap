@@ -41,19 +41,31 @@
     cp .env.example .env
     ```
 
-### Edit .env with your credentials
+### Setup PostgreSQL
 
-Start PostgreSQL:
+You can either:
 
-```bash
-docker-compose up -d
-```
+1. **Spin up a PostgreSQL database using Docker**:
+
+    ```bash
+    docker-compose up -d
+    ```
+
+2. **Use a local PostgreSQL server**:
+
+    Ensure PostgreSQL is installed and running on your machine. Create a database named `skillmap` and configure your credentials.
+
+### Edit `.env` with your database connection details
+
+Update the `.env` file with the appropriate connection string for your setup.
 
 Run the app:
 
 ```bash
 npm run dev
 ```
+
+Visit `/docs` for API documentation.
 
 ## Contributing
 
