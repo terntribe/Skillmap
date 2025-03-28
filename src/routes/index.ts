@@ -1,3 +1,5 @@
+// src/routes/index.ts
+
 import { Router } from "express";
 import userRoutes from "./user.route";
 import roadmapRoutes from "./roadmap.route";

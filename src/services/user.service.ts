@@ -1,3 +1,5 @@
+// src/services/user.service.ts
+
 import { AppDataSource } from '../config/db';
 import { User } from '../models/user.model';
 import * as bcrypt from 'bcrypt';
@@ -25,22 +27,19 @@ export class UserService {
 
     async findUserById(id: string): Promise<User | null> {
         return this.userRepo.findOne({ 
-        where: { id },
-        select: ['id', 'username', 'email', 'role', 'createdAt']
+        where: { id }
         });
     }
 
     async findByEmail(email: string): Promise<User | null> {
         return this.userRepo.findOne({ 
-        where: { email },
-        select: ['id', 'email', 'password', 'role']
+        where: { email }
         });
     }
 
     async findByUsername(username: string): Promise<User | null> {
         return this.userRepo.findOne({ 
-        where: { username },
-        select: ['id', 'email', 'password', 'role']
+        where: { username }
         });
     }
 

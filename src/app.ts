@@ -4,8 +4,12 @@ import { PORT } from './config/env';
 import routes from './routes';
 import { errorHandler } from './middlewares/error.middleware';
 import { requestLogger } from './middlewares/logger.middleware';
+import { swaggerSetup } from './config/swagger'; 
 
 const app = express();
+
+swaggerSetup(app);
+
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(requestLogger);
