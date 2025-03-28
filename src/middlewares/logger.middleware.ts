@@ -17,17 +17,17 @@ export const requestLogger = (req: Request, res: Response, next: NextFunction) =
     res.on('finish', () => {
         const durationInMs = getDurationInMilliseconds(start);
         const logData = {
-        method: req.method,
-        path: req.path,
-        status: res.statusCode,
-        duration: `${durationInMs}ms`,
-        ip: ip,
-        timestamp: new Date().toISOString()
+            method: req.method,
+            path: req.originalUrl,
+            status: res.statusCode,
+            duration: `${durationInMs}ms`,
+            ip: ip,
+            timestamp: new Date().toISOString()
         };
         
         console.log(
-        `${logData.timestamp} - ${logData.ip} - ${req.method} ${req.path} - ` +
-        `Status: ${logData.status} - Duration: ${logData.duration}`
+            `${logData.timestamp} - ${logData.ip} - ${logData.method} ${logData.path} - ` +
+            `Status: ${logData.status} - Duration: ${logData.duration}`
         );
     });
 
