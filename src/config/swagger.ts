@@ -3,8 +3,24 @@ import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 import { Application } from 'express';
 import { PORT } from './env';
-import { UserRegister, UserLogin, UserResponse, LoginResponse } from '../schemas/user.schemas';
-import { ErrorResponse } from '../schemas/error.schemas';
+import { 
+    UserRegister, 
+    UserLogin, 
+    UserResponse, 
+    LoginResponse 
+} from '../schemas/user.schemas';
+import {
+    RoadmapCreate,
+    RoadmapResponse,
+    StepCreate,
+    StepResponse,
+    TagResponse,
+    ContributionResponse
+} from '../schemas/roadmap.schemas';
+import { 
+    ErrorResponse,
+    ErrorExamples
+ } from '../schemas/error.schemas';
 
 
 const options: swaggerJsdoc.Options = {
@@ -28,8 +44,15 @@ const options: swaggerJsdoc.Options = {
                 UserLogin,
                 UserResponse,
                 LoginResponse,
-                ErrorResponse
-            }
+                ErrorResponse,
+                RoadmapCreate,
+                RoadmapResponse,
+                StepCreate,
+                StepResponse,
+                TagResponse,
+                ContributionResponse
+            },
+            examples: ErrorExamples,
         },
         servers: [
             {
