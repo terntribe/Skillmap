@@ -26,7 +26,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # Editor directories and files
-.vscode/
 .idea/
 *.swp
 *.swo
@@ -52,3 +51,6 @@ Thumbs.db
 # Temporary files
 tmp/
 temp/
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
